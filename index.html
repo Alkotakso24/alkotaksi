@@ -1,1 +1,57 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Alcohol Sales</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 20px; }\n        table { width: 100%; border-collapse: collapse; }\n        th, td { border: 1px solid #ddd; padding: 8px; }\n        th { background-color: #f2f2f2; }\n    </style>\n</head>\n<body>\n    <h1>Alcohol Sales Management</h1>\n    <table>\n        <thead>\n            <tr>\n                <th>Product</th>\n                <th>Price</th>\n                <th>Action</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Beer</td>\n                <td>$5.00</td>\n                <td><button onclick=\"managePrice(\'beer\')\">Manage Price</button></td>\n            </tr>\n            <tr>\n                <td>Wine</td>\n                <td>$15.00</td>\n                <td><button onclick=\"managePrice(\'wine\')\">Manage Price</button></td>\n            </tr>\n            <tr>\n                <td>Whiskey</td>\n                <td>$30.00</td>\n                <td><button onclick=\"managePrice(\'whiskey\')\">Manage Price</button></td>\n            </tr>\n        </tbody>\n    </table>\n    <script>\n        function managePrice(product) {\n            let newPrice = prompt(\`Enter new price for \${product}:\`);\n            if (newPrice) {\n                alert(\`Price for \${product} has been updated to \${newPrice}.\`);\n                // Add logic to update price in the database or state\n            }\n        }\n    </script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Alkotakso</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Alkotakso</h1>
+        <nav>
+            <ul>
+                <li><a href="#beer">Beer</a></li>
+                <li><a href="#wine">Wine</a></li>
+                <li><a href="#spirits">Spirits</a></li>
+                <li><a href="#cider">Cider</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="age-verification" class="modal">
+            <div class="modal-content">
+                <h2>Age Verification</h2>
+                <p>You must be 18 or older to enter this site.</p>
+                <button id="verify-age">I am 18 or older</button>
+            </div>
+        </section>
+
+        <section id="product-listing">
+            <h2>Products</h2>
+            <div class="product-grid">
+                <!-- Product items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="cart">
+            <h2>Shopping Cart</h2>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <h3>Total: <span id="total-price">$0.00</span></h3>
+        </section>
+
+        <div class="search-filter">
+            <input type="text" id="search-box" placeholder="Search products...">
+            <button id="filter-btn">Filter</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Alkotakso. All rights reserved.</p>
+    </footer>
+</body>
+</html>
